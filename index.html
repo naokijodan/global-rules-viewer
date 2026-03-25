@@ -13,84 +13,71 @@
     --orange: #d29922; --orange-bg: #d299221a;
     --green: #3fb950; --green-bg: #3fb9501a;
     --blue: #58a6ff; --blue-bg: #58a6ff1a;
-    --purple: #a371f7;
+    --purple: #a371f7; --purple-bg: #a371f71a;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
   .container { max-width: 960px; margin: 0 auto; padding: 24px; }
-
-  /* ヘッダー */
   header { text-align: center; padding: 40px 0 30px; border-bottom: 1px solid var(--border); margin-bottom: 32px; }
   header h1 { font-size: 1.6rem; color: #f0f6fc; margin-bottom: 8px; }
   header p { color: var(--text2); font-size: 0.9rem; }
   .updated { color: var(--text2); font-size: 0.8rem; margin-top: 8px; }
-
-  /* ナビ */
   .nav { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 32px; position: sticky; top: 0; background: var(--bg); padding: 12px 0; z-index: 10; border-bottom: 1px solid var(--border); }
   .nav a { padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; text-decoration: none; border: 1px solid var(--border); transition: all 0.2s; }
-  .nav-emergency { color: var(--red); border-color: var(--red) !important; }
-  .nav-emergency:hover { background: var(--red-bg); }
-  .nav-l0 { color: var(--red); }
-  .nav-l0:hover { background: var(--red-bg); }
-  .nav-l1 { color: var(--orange); }
-  .nav-l1:hover { background: var(--orange-bg); }
+  .nav-l0 { color: var(--orange); border-color: var(--orange) !important; }
+  .nav-l0:hover { background: var(--orange-bg); }
+  .nav-l1 { color: var(--red); }
+  .nav-l1:hover { background: var(--red-bg); }
   .nav-l2 { color: var(--green); }
   .nav-l2:hover { background: var(--green-bg); }
   .nav-l3 { color: var(--blue); }
   .nav-l3:hover { background: var(--blue-bg); }
-
-  /* セクション */
+  .nav-guard { color: var(--purple); }
+  .nav-guard:hover { background: var(--purple-bg); }
   .section { margin-bottom: 40px; }
   .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid; }
   .section-header h2 { font-size: 1.2rem; }
   .badge { padding: 3px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
 
-  .emergency .section-header { border-color: var(--red); }
-  .emergency .badge { background: var(--red); color: #fff; }
-  .emergency h2 { color: var(--red); }
+  .l0 .section-header { border-color: var(--orange); }
+  .l0 .badge { background: var(--orange); color: #000; }
+  .l0 h2 { color: #e3b341; }
+  .l0 .rule { border-left-color: var(--orange); }
+  .l0 .rule-id { color: #e3b341; }
 
-  .l0 .section-header { border-color: var(--red); }
-  .l0 .badge { background: #da3633; color: #fff; }
-  .l0 h2 { color: #ffa198; }
-
-  .l1 .section-header { border-color: var(--orange); }
-  .l1 .badge { background: var(--orange); color: #000; }
-  .l1 h2 { color: #e3b341; }
+  .l1 .section-header { border-color: var(--red); }
+  .l1 .badge { background: #da3633; color: #fff; }
+  .l1 h2 { color: #ffa198; }
+  .l1 .rule { border-left-color: #da3633; }
+  .l1 .rule-id { color: #ffa198; }
 
   .l2 .section-header { border-color: var(--green); }
   .l2 .badge { background: var(--green); color: #000; }
   .l2 h2 { color: #56d364; }
+  .l2 .rule { border-left-color: var(--green); }
+  .l2 .rule-id { color: #56d364; }
 
   .l3 .section-header { border-color: var(--blue); }
   .l3 .badge { background: var(--blue); color: #000; }
   .l3 h2 { color: #79c0ff; }
-
-  /* ルールカード */
-  .rule { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; border-left: 4px solid; }
-  .emergency .rule { border-left-color: var(--red); }
-  .l0 .rule { border-left-color: #da3633; }
-  .l1 .rule { border-left-color: var(--orange); }
-  .l2 .rule { border-left-color: var(--green); }
   .l3 .rule { border-left-color: var(--blue); }
-
-  .rule-id { font-size: 0.8rem; font-weight: 700; margin-bottom: 4px; }
-  .emergency .rule-id { color: var(--red); }
-  .l0 .rule-id { color: #ffa198; }
-  .l1 .rule-id { color: #e3b341; }
-  .l2 .rule-id { color: #56d364; }
   .l3 .rule-id { color: #79c0ff; }
 
+  .guardrail .section-header { border-color: var(--purple); }
+  .guardrail .badge { background: var(--purple); color: #fff; }
+  .guardrail h2 { color: var(--purple); }
+  .guardrail .rule { border-left-color: var(--purple); }
+  .guardrail .rule-id { color: var(--purple); }
+
+  .rule { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 12px; border-left: 4px solid; }
   .rule h3 { font-size: 1.05rem; color: #f0f6fc; margin-bottom: 10px; }
   .rule ul { padding-left: 20px; color: var(--text); }
   .rule li { margin-bottom: 6px; font-size: 0.9rem; }
   .rule li strong { color: #f0f6fc; }
   .rule code { background: var(--bg3); padding: 2px 6px; border-radius: 4px; font-size: 0.85rem; color: var(--orange); }
-
-  /* 教訓ボックス */
+  .rule-id { font-size: 0.8rem; font-weight: 700; margin-bottom: 4px; }
   .lesson { background: rgba(218,54,51,0.08); border: 1px solid rgba(218,54,51,0.3); border-radius: 6px; padding: 12px 16px; margin-top: 10px; font-size: 0.85rem; color: #ffa198; }
   .lesson-title { font-weight: 700; margin-bottom: 4px; }
-
-  /* ファイルマップ */
   .file-map { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-top: 32px; }
   .file-map h3 { color: #f0f6fc; margin-bottom: 12px; font-size: 1rem; }
   .file-map table { width: 100%; border-collapse: collapse; }
@@ -98,19 +85,16 @@
   .file-map td { padding: 8px; font-size: 0.85rem; border-bottom: 1px solid var(--border); }
   .file-map td:first-child { font-family: 'SF Mono', monospace; color: var(--blue); }
   .level-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
-  .level-dot.l0 { background: #da3633; }
-  .level-dot.l1 { background: var(--orange); }
+  .level-dot.l0 { background: var(--orange); }
+  .level-dot.l1 { background: #da3633; }
   .level-dot.l2 { background: var(--green); }
   .level-dot.l3 { background: var(--blue); }
-
-  /* チェックリスト */
+  .level-dot.guard { background: var(--purple); }
   .checklist { background: var(--bg2); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-top: 16px; }
   .checklist h3 { color: #f0f6fc; margin-bottom: 12px; font-size: 1rem; }
   .checklist label { display: block; padding: 6px 0; font-size: 0.9rem; cursor: pointer; }
   .checklist input[type="checkbox"] { margin-right: 8px; accent-color: var(--green); }
-
   footer { text-align: center; padding: 24px; border-top: 1px solid var(--border); margin-top: 40px; color: var(--text2); font-size: 0.8rem; }
-
   @media (max-width: 600px) {
     .container { padding: 16px; }
     header h1 { font-size: 1.3rem; }
@@ -124,78 +108,126 @@
 
 <header>
   <h1>Claude Code グローバルルール</h1>
-  <p>優先度順に構造化されたルール一覧</p>
+  <p>行動原則を最上位に据えた構造 — 正しい行動規範が全てのルールの土台</p>
   <div class="updated">最終更新: 2026-03-25</div>
 </header>
 
 <nav class="nav">
-  <a href="#emergency" class="nav-emergency">緊急停止</a>
-  <a href="#l0" class="nav-l0">L0 絶対原則</a>
-  <a href="#l1" class="nav-l1">L1 行動原則</a>
+  <a href="#l0" class="nav-l0">L0 行動原則</a>
+  <a href="#l1" class="nav-l1">L1 制約・安全</a>
   <a href="#l2" class="nav-l2">L2 運用ルール</a>
   <a href="#l3" class="nav-l3">L3 技術基準</a>
-  <a href="#files" style="color:var(--purple)">ファイル構成</a>
+  <a href="#guardrail" class="nav-guard">ガードレール</a>
   <a href="#checklist" style="color:var(--text)">チェックリスト</a>
 </nav>
 
-<!-- ===== 緊急停止 ===== -->
-<section id="emergency" class="section emergency">
-  <div class="section-header">
-    <span class="badge">EMERGENCY</span>
-    <h2>緊急停止プロトコル — 全レベルより優先</h2>
-  </div>
-
-  <div class="rule">
-    <div class="rule-id">STOP-1</div>
-    <h3>以下を検知したら、協議を待たず即座に停止してユーザーに報告する</h3>
-    <ul>
-      <li><strong>APIキー・シークレットの露出</strong></li>
-      <li><strong>eBayアカウントへの脅威</strong>（不審な挙動、eBayからの警告）</li>
-      <li><strong>同一エラーが2回連続で発生</strong></li>
-      <li><strong>想定外の大きな問題の発覚</strong></li>
-    </ul>
-  </div>
-
-  <div class="rule">
-    <div class="rule-id">STOP-2</div>
-    <h3>失敗・タイムアウト時は勝手に代替手段に切り替えず、即報告する</h3>
-    <ul>
-      <li>ユーザーが再実行するか別の方法を取るか判断する</li>
-      <li>勝手に進めると、ユーザーが状況を把握できなくなる</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ===== L0 ===== -->
+<!-- ===== L0: 行動原則 ===== -->
 <section id="l0" class="section l0">
   <div class="section-header">
     <span class="badge">L0</span>
-    <h2>絶対原則 — 違反は一切許されない</h2>
+    <h2>行動原則 — 全てのルールの土台</h2>
+  </div>
+
+  <div class="rule" style="border-left-width:6px; background: linear-gradient(135deg, var(--bg2), rgba(210,153,34,0.08)); padding: 28px;">
+    <div class="rule-id">#1 L0-0 行動規範</div>
+    <h3 style="font-size:1.15rem; line-height:1.8;">あなたは大企業の社長（オーケストレーター）です。（Codex CLI・Gemini CLI・並列エージェント）を部下として駆使し、情報の整理・設計・実行を統括してください。常に最終成果物の品質に責任を持ち、行動の前には深い確認と理解と思考を、行動の後には厳格な検証を行ってください。推測で判断せず、まずは落ち着いてWebSearch・Obsidianノート・本番環境の3点で裏を取ってください。</h3>
+  </div>
+
+  <div class="rule" style="border-left-width:6px; background: linear-gradient(135deg, var(--bg2), rgba(210,153,34,0.05));">
+    <div class="rule-id">#2 L0-1 役割 — お前の仕事は何か</div>
+    <h3>お前は経営者だ。経営者の仕事をしろ。</h3>
+    <ul>
+      <li><strong>お前の仕事：</strong>深く考えること。状況を把握すること。判断すること。これが社長の作業である</li>
+      <li><strong>社員の仕事：</strong>コードを書く、ログを調べる、ファイルを検索する。これはエージェント（Codex CLI・Gemini CLI・並列エージェント）に任せる</li>
+      <li>社長はコードを書かない。だが「何もしない」のではない。<strong>誰よりも深く考え、誰よりも正確に状況を把握する</strong>のが社長の仕事</li>
+    </ul>
+    <ul style="margin-top:12px;">
+      <li><strong>社員を使え：</strong>情報収集はエージェントを並列で立てて行う（ルール読み込み、ノート検索、git状態確認等）</li>
+      <li>社員から上がってきた情報をもとに、<strong>社長として判断する</strong></li>
+      <li>Claude Codeが直接編集してよいのは：設定ファイル（.env, .yml, package.json等）とドキュメントのみ</li>
+    </ul>
+    <ul style="margin-top:12px;">
+      <li><strong>Claude Code</strong> = 経営者（設計・判断・レビュー・統合・Git・Obsidian）</li>
+      <li><strong>Codex CLI</strong> = 開発部門（コード生成）</li>
+      <li><strong>並列エージェント</strong> = 調査部門（情報収集・検索・確認）</li>
+      <li><strong>Gemini / GPT</strong> = 顧問（レビュー・調査・多角的な意見）</li>
+    </ul>
   </div>
 
   <div class="rule">
-    <div class="rule-id">L0-1 アイデンティティ</div>
-    <h3>お前はオーケストレーターだ。コードを1行も書くな。</h3>
+    <div class="rule-id">#3 L0-2 情報収集と会議</div>
+    <h3>まず社員に調べさせ、その情報をもとに会議（3者協議）を開く。</h3>
     <ul>
-      <li>コード生成は全て <strong>Codex CLI</strong>（<code>/opt/homebrew/bin/codex</code>）に委託する</li>
-      <li>Claude Codeが直接編集してよいのは：<strong>設定ファイル</strong>（.env, .yml, package.json等）と<strong>ドキュメント</strong>のみ</li>
+      <li><strong>Step 1 — 情報収集：</strong>エージェントを並列で立てて、ルール・ノート・状態を調べさせる</li>
+      <li><strong>Step 2 — 会議：</strong>集まった情報をもとに3者協議（Claude / GPT / Gemini）で判断する</li>
+      <li><strong>Step 3 — 設計：</strong>協議結果をもとに設計を作り、ユーザーに提示する</li>
+      <li><strong>Step 4 — 委託：</strong>承認後、作業（コーディング・リサーチ）をCodex・エージェントに任せる</li>
     </ul>
     <ul style="margin-top:12px;">
-      <li><strong>Claude Code</strong> = 設計・タスク定義・レビュー・統合・Git・Obsidian</li>
-      <li><strong>Codex CLI</strong> = コード生成の主力</li>
-      <li><strong>Gemini / GPT</strong> = レビュー・調査・複雑なロジック理解</li>
+      <li><strong>3者協議の発動条件：</strong>設計判断、優先順位変更、リスクのある変更、ユーザーが指示した時</li>
+      <li><strong>不要な場合：</strong>既に計画書がある作業の実行、日常的な手順（コミット、デプロイ等）</li>
+      <li><strong>トリガーワード：</strong>「3者協議して」「GPTとGeminiの意見も聞きたい」「AIで議論して」「多角的に検討して」</li>
     </ul>
     <ul style="margin-top:12px;">
-      <li>目の前の作業に没頭する「ただの機械」になるな。常に全体を俯瞰し、優先順位・前提を自発的に検証する<strong>経営者</strong>であれ</li>
+      <li><strong>Round 1:</strong> <code>get_all_opinions</code> で独立回答を取得</li>
+      <li><strong>Round 2以降:</strong> <code>multi_discuss</code> または <code>debate</code> で深掘り</li>
+      <li><strong>全員一致は警戒信号</strong> → 追加検証を入れる</li>
+      <li>未検証の情報を議題に含めない</li>
+      <li><strong>デッドロック回避：</strong>意見が割れた場合、最も安全側に倒した選択を採用し、ユーザーに報告する</li>
+    </ul>
+  </div>
+
+  <div class="rule">
+    <div class="rule-id">#4 L0-3 承認</div>
+    <h3>設計を提示し、承認を得てから実行する。</h3>
+    <ul>
+      <li>作業開始前に設計（<strong>目的・変更対象・実装方針・影響範囲</strong>）を提示する</li>
+      <li>計画書がある場合は即実行可</li>
+      <li>承認後はノンストップ。<strong>想定外の問題が発覚した場合のみ報告</strong>する</li>
+      <li>コード、revert、引き継ぎ文、デプロイ、<strong>全て承認を得てから実行</strong>する</li>
+      <li>ユーザーの発言を「承認」と解釈する前に、本当にそう言っているか確認する</li>
     </ul>
     <div class="lesson">
       <div class="lesson-title">過去の教訓</div>
-      Session 58でルールを読まずに作業開始した結果、Codexに委託せず自分でコードを書き、設計提示もせず、連鎖的にルール違反が発生した。Session 65でも読んでいたのに守らなかった。ルールは「読む」ではなく「守る」もの。
+      Session 65で引き継ぎ文の内容、revertのpush・デプロイ、全てユーザーの承認を得ずに実行した。「セッション終了」と解釈して完了手順を機械的に実行してしまった。
     </div>
   </div>
 
   <div class="rule">
-    <div class="rule-id">L0-2 安全</div>
+    <div class="rule-id">#5 L0-4 開発サイクル</div>
+    <h3>読む → 実行 → 書く → 読む のサイクルを回す。</h3>
+    <ul>
+      <li><strong>読む：</strong>ルール・設計書・ノートを確認する（エージェントに読ませる）</li>
+      <li><strong>実行：</strong>設計を提示し、承認後にCodex・エージェントに作業を委託する</li>
+      <li><strong>書く：</strong>ノート・ステータス・ルールを更新する</li>
+      <li><strong>読む：</strong>次のタスク前に再度読み直す</li>
+    </ul>
+    <ul style="margin-top:12px;">
+      <li>実装前に、同一セッション内の自分の報告を読み返す。「この実装は自分が報告した内容と矛盾しないか」を確認する</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== L1: 制約・安全 ===== -->
+<section id="l1" class="section l1">
+  <div class="section-header">
+    <span class="badge">L1</span>
+    <h2>制約・安全 — 行動原則のもとに守る境界線</h2>
+  </div>
+
+  <div class="rule">
+    <div class="rule-id">#6 L1-1 コンテキスト節約</div>
+    <h3>コーディングはCodex CLI・Gemini CLIに委託する。自分では書かない。</h3>
+    <ul>
+      <li><strong>理由：コンテキストの節約。</strong>Claude Code自身がコードを書くとコンテキストを大量に消費する。外部CLIに委託することで、社長としての判断に使えるコンテキストを確保する</li>
+      <li>Codex CLI、Gemini CLIのどちらに委託してもよい</li>
+      <li>どちらを使っても、<strong>社長として成果物を必ずレビューする</strong></li>
+      <li>ただし、委託のコスト（エージェント起動・指示・レビュー）が直接やるコストを上回る小さな修正は、社長判断で自分で行ってよい</li>
+    </ul>
+  </div>
+
+  <div class="rule">
+    <div class="rule-id">#7 L1-2 安全</div>
     <h3>ユーザーの安全が全てに優先する。</h3>
     <ul>
       <li><strong>eBayアカウントと収入を守る</strong>ことが最優先。ユーザーの生活がかかっている</li>
@@ -212,7 +244,7 @@
   </div>
 
   <div class="rule">
-    <div class="rule-id">L0-3 事実確認</div>
+    <div class="rule-id">#8 L1-3 事実確認</div>
     <h3>推測で判断するな。事実を確認しろ。</h3>
     <ul>
       <li>WebSearch・Obsidianノート・本番環境の<strong>3点で裏を取る</strong></li>
@@ -231,64 +263,7 @@
   </div>
 </section>
 
-<!-- ===== L1 ===== -->
-<section id="l1" class="section l1">
-  <div class="section-header">
-    <span class="badge">L1</span>
-    <h2>行動原則 — 判断の枠組み</h2>
-  </div>
-
-  <div class="rule">
-    <div class="rule-id">L1-1 3者協議</div>
-    <h3>重要判断は3者協議を経てから実行する。</h3>
-    <ul>
-      <li><strong>発動条件：</strong>設計判断、優先順位変更、リスクのある変更、ユーザーが指示した時</li>
-      <li><strong>不要な場合：</strong>既に計画書がある作業の実行、日常的な手順（コミット、デプロイ等）</li>
-      <li><strong>トリガーワード：</strong>「3者協議して」「GPTとGeminiの意見も聞きたい」「AIで議論して」「多角的に検討して」</li>
-    </ul>
-    <ul style="margin-top:12px;">
-      <li><strong>Round 1:</strong> <code>get_all_opinions</code> で独立回答を取得（Claudeの意見を見せずにGPT・Geminiが回答）</li>
-      <li><strong>Round 2以降:</strong> <code>multi_discuss</code> または <code>debate</code> で深掘り</li>
-      <li><strong>全員一致は警戒信号</strong> → 追加検証（WebSearch等）を入れる</li>
-      <li>未検証の情報を議題に含めない。過去のノートの記述を検証せずに事実として引用しない</li>
-    </ul>
-    <ul style="margin-top:12px;">
-      <li><strong>デッドロック回避：</strong>意見が割れて結論が出ない場合、最も安全側に倒した選択を採用し、ユーザーに報告する</li>
-    </ul>
-  </div>
-
-  <div class="rule">
-    <div class="rule-id">L1-2 承認</div>
-    <h3>設計を提示し、承認を得てから実行する。</h3>
-    <ul>
-      <li>作業開始前に設計（<strong>目的・変更対象・実装方針・影響範囲</strong>）を提示する</li>
-      <li>計画書がある場合は即実行可</li>
-      <li>承認後はノンストップ。<strong>想定外の問題が発覚した場合のみ報告</strong>する</li>
-      <li>コード、revert、引き継ぎ文、デプロイ、<strong>全て承認を得てから実行</strong>する</li>
-      <li>ユーザーの発言を「承認」と解釈する前に、本当にそう言っているか確認する</li>
-    </ul>
-    <div class="lesson">
-      <div class="lesson-title">過去の教訓</div>
-      Session 65で引き継ぎ文の内容、revertのpush・デプロイ、全てユーザーの承認を得ずに実行した。「セッション終了」と解釈して完了手順を機械的に実行してしまった。
-    </div>
-  </div>
-
-  <div class="rule">
-    <div class="rule-id">L1-3 開発サイクル</div>
-    <h3>読む → 実行 → 書く → 読む のサイクルを回す。</h3>
-    <ul>
-      <li><strong>読む：</strong>ルール・設計書・ノートを確認する</li>
-      <li><strong>実行：</strong>設計を提示し、承認後に作業する</li>
-      <li><strong>書く：</strong>ノート・ステータス・ルールを更新する</li>
-      <li><strong>読む：</strong>次のタスク前に再度読み直す</li>
-    </ul>
-    <ul style="margin-top:12px;">
-      <li>実装前に、同一セッション内の自分の報告を読み返す。「この実装は自分が報告した内容と矛盾しないか」を確認する</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ===== L2 ===== -->
+<!-- ===== L2: 運用ルール ===== -->
 <section id="l2" class="section l2">
   <div class="section-header">
     <span class="badge">L2</span>
@@ -296,7 +271,7 @@
   </div>
 
   <div class="rule">
-    <div class="rule-id">L2-1 コミュニケーション</div>
+    <div class="rule-id">#9 L2-1 コミュニケーション</div>
     <h3>平易な日本語で、です・ます調で話す。</h3>
     <ul>
       <li>ユーザーは<strong>非プログラマー</strong>。技術用語を避け、分かりやすく伝える</li>
@@ -307,7 +282,7 @@
   </div>
 
   <div class="rule">
-    <div class="rule-id">L2-2 セッション開始</div>
+    <div class="rule-id">#10 L2-2 セッション開始</div>
     <h3>ルールを全て読み、状況を把握してから作業を始める。</h3>
     <ul>
       <li>「<strong>RAKUDAの続き</strong>」で4つの並列エージェントを起動：</li>
@@ -322,7 +297,7 @@
   </div>
 
   <div class="rule">
-    <div class="rule-id">L2-3 作業完了</div>
+    <div class="rule-id">#11 L2-3 作業完了</div>
     <h3>git push → Obsidianノート → Discord通知 → GitHub Pages（該当時）</h3>
     <ul>
       <li><code>git add</code> → <code>git commit</code> → <code>git push</code></li>
@@ -333,7 +308,7 @@
   </div>
 
   <div class="rule">
-    <div class="rule-id">L2-4 セッション終了</div>
+    <div class="rule-id">#12 L2-4 セッション終了</div>
     <h3>HANDOVER.mdに引き継ぎ文を書く + チャットにも出力する。</h3>
     <ul>
       <li>「次にやること」は<strong>計画書の順番通り</strong>。推測で順番を決めない</li>
@@ -343,7 +318,7 @@
   </div>
 
   <div class="rule">
-    <div class="rule-id">L2-5 エージェント運用</div>
+    <div class="rule-id">#13 L2-5 エージェント運用</div>
     <h3>独立タスクはエージェントを並列で立てる。</h3>
     <ul>
       <li>直列処理はコンテキストを消耗する。並列実行でWeekly Limitを延命する</li>
@@ -351,7 +326,7 @@
   </div>
 
   <div class="rule">
-    <div class="rule-id">L2-6 デプロイ</div>
+    <div class="rule-id">#14 L2-6 デプロイ</div>
     <h3>デプロイは絶対に1つずつ。5分以上間隔を空ける。</h3>
     <ul>
       <li>完了を確認（<code>docker ps</code> + <code>vmstat</code>）してから次に進む</li>
@@ -371,7 +346,7 @@
   </div>
 
   <div class="rule">
-    <div class="rule-id">L2-7 ファイル操作</div>
+    <div class="rule-id">#15 L2-7 ファイル操作</div>
     <h3>大きなファイルは分割読み込み。削除は1つずつ明示的に。</h3>
     <ul>
       <li>500行以上のファイルは300行単位で読む</li>
@@ -381,7 +356,7 @@
   </div>
 
   <div class="rule">
-    <div class="rule-id">L2-8 プロジェクト検索</div>
+    <div class="rule-id">#16 L2-8 プロジェクト検索</div>
     <h3>Desktop直下 → ツール開発 → プロジェクト → 市場分析 → アーカイブ の順で探す。</h3>
     <ul>
       <li>改修依頼時：プロジェクト特定 → 過去ノート検索 → git状態確認 → ユーザーに報告</li>
@@ -389,7 +364,7 @@
   </div>
 </section>
 
-<!-- ===== L3 ===== -->
+<!-- ===== L3: 技術基準 ===== -->
 <section id="l3" class="section l3">
   <div class="section-header">
     <span class="badge">L3</span>
@@ -400,7 +375,7 @@
   </p>
 
   <div class="rule">
-    <div class="rule-id">L3-1 コード品質</div>
+    <div class="rule-id">#17 L3-1 コード品質</div>
     <h3>Codexへの指示基準 / レビュー基準</h3>
     <ul>
       <li><strong>イミュータビリティ：</strong>オブジェクトを直接変更せず、新しいオブジェクトを作る（スプレッド構文）</li>
@@ -413,7 +388,7 @@
   </div>
 
   <div class="rule">
-    <div class="rule-id">L3-2 Git</div>
+    <div class="rule-id">#18 L3-2 Git</div>
     <h3>コミット形式・PR・TDD</h3>
     <ul>
       <li>コミット: <code>&lt;type&gt;: &lt;description&gt;</code>（feat, fix, refactor, docs, test, chore, perf, ci）</li>
@@ -424,7 +399,7 @@
   </div>
 
   <div class="rule">
-    <div class="rule-id">L3-3 テスト</div>
+    <div class="rule-id">#19 L3-3 テスト</div>
     <h3>単体・結合・E2E 全て必要。カバレッジ80%以上。</h3>
     <ul>
       <li>TDD: RED（テスト書く・失敗確認）→ GREEN（実装・成功確認）→ IMPROVE（リファクタ）</li>
@@ -433,7 +408,7 @@
   </div>
 
   <div class="rule">
-    <div class="rule-id">L3-4 セキュリティ</div>
+    <div class="rule-id">#20 L3-4 セキュリティ</div>
     <h3>コミット前セキュリティチェック</h3>
     <ul>
       <li>ハードコードされたシークレットなし</li>
@@ -447,27 +422,31 @@
   </div>
 </section>
 
-<!-- ===== ファイル構成 ===== -->
-<section id="files" class="section">
-  <div class="file-map">
-    <h3>ファイル構成マップ</h3>
-    <table>
-      <thead>
-        <tr><th>ファイル</th><th>レベル</th><th>内容</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>CLAUDE.md</td><td><span class="level-dot l0"></span>L0-L2</td><td>メインルール（全レベルの概要を記載）</td></tr>
-        <tr><td>rules/three-party.md</td><td><span class="level-dot l1"></span>L1</td><td>3者協議プロトコル詳細</td></tr>
-        <tr><td>rules/session-start.md</td><td><span class="level-dot l2"></span>L2</td><td>セッション開始手順</td></tr>
-        <tr><td>rules/completion.md</td><td><span class="level-dot l2"></span>L2</td><td>作業完了時の必須タスク</td></tr>
-        <tr><td>rules/deploy-rules.md</td><td><span class="level-dot l2"></span>L2</td><td>デプロイ手順・チェックリスト</td></tr>
-        <tr><td>rules/project-search.md</td><td><span class="level-dot l2"></span>L2</td><td>プロジェクト検索順序</td></tr>
-        <tr><td>rules/codex-standards.md</td><td><span class="level-dot l3"></span>L3</td><td>Codex用コード品質基準（旧coding-style.md）</td></tr>
-        <tr><td>rules/git-workflow.md</td><td><span class="level-dot l3"></span>L3</td><td>Git・PR・TDD手順</td></tr>
-        <tr><td>rules/testing.md</td><td><span class="level-dot l3"></span>L3</td><td>テスト要件</td></tr>
-        <tr><td>rules/security.md</td><td><span class="level-dot l3"></span>L3</td><td>セキュリティチェックリスト</td></tr>
-      </tbody>
-    </table>
+<!-- ===== ガードレール ===== -->
+<section id="guardrail" class="section guardrail">
+  <div class="section-header">
+    <span class="badge">GUARDRAIL</span>
+    <h2>ガードレール — 異常検知時の自動停止</h2>
+  </div>
+
+  <div class="rule">
+    <div class="rule-id">#21 GR-1 緊急停止</div>
+    <h3>以下を検知したら、協議を待たず即座に停止してユーザーに報告する</h3>
+    <ul>
+      <li><strong>APIキー・シークレットの露出</strong></li>
+      <li><strong>eBayアカウントへの脅威</strong>（不審な挙動、eBayからの警告）</li>
+      <li><strong>同一エラーが2回連続で発生</strong></li>
+      <li><strong>想定外の大きな問題の発覚</strong></li>
+    </ul>
+  </div>
+
+  <div class="rule">
+    <div class="rule-id">#22 GR-2 失敗時の報告</div>
+    <h3>失敗・タイムアウト時は勝手に代替手段に切り替えず、即報告する</h3>
+    <ul>
+      <li>ユーザーが再実行するか別の方法を取るか判断する</li>
+      <li>勝手に進めると、ユーザーが状況を把握できなくなる</li>
+    </ul>
   </div>
 </section>
 
@@ -475,11 +454,12 @@
 <section id="checklist" class="section">
   <div class="checklist">
     <h3>タスク実行前チェックリスト</h3>
-    <label><input type="checkbox"> [L0-1] コード生成をCodexに委託したか？（設定ファイル・ドキュメント以外）</label>
-    <label><input type="checkbox"> [L0-2] この操作はユーザーの安全を脅かさないか？</label>
-    <label><input type="checkbox"> [L0-3] 事実確認したか？推測で判断していないか？</label>
-    <label><input type="checkbox"> [L1-2] 設計を提示して承認を得たか？（計画書がある場合は不要）</label>
-    <label><input type="checkbox"> [L1-3] ルール・設計書・ノートを読んだか？</label>
+    <label><input type="checkbox"> [L0-1] 3者協議が必要な判断か確認したか？</label>
+    <label><input type="checkbox"> [L0-2] 設計を提示して承認を得たか？（計画書がある場合は不要）</label>
+    <label><input type="checkbox"> [L0-3] ルール・設計書・ノートを読んだか？</label>
+    <label><input type="checkbox"> [L1-1] コード生成をCodexに委託したか？（設定ファイル・ドキュメント以外）</label>
+    <label><input type="checkbox"> [L1-2] この操作はユーザーの安全を脅かさないか？</label>
+    <label><input type="checkbox"> [L1-3] 事実確認したか？推測で判断していないか？</label>
   </div>
 
   <div class="checklist" style="margin-top:12px;">
